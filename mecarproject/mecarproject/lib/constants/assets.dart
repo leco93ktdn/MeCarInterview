@@ -1,6 +1,7 @@
 class AssetsSVG {
   static const String _baseAssets = 'assets/svg/';
   static const String logo = _baseAssets + 'logo.svg';
+  static const String avatar = _baseAssets + 'avatar.svg';
   static const String ic_account = _baseAssets + 'ic_account.svg';
   static const String ic_comment = _baseAssets + 'ic_comment.svg';
   static const String ic_create = _baseAssets + 'ic_create.svg';
@@ -12,6 +13,8 @@ class AssetsSVG {
 class AssetsPNG {
   static const String _baseAssets = 'assets/png/';
   static const String background = _baseAssets + 'background.png';
+  static const String logo = _baseAssets + 'logo.png';
+  static const String avatar = _baseAssets + 'avatar.png';
   static const String img1 = _baseAssets + 'img1.png';
   static const String img2 = _baseAssets + 'img2.png';
   static const String img3 = _baseAssets + 'img3.png';

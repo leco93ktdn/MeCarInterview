@@ -19,7 +19,7 @@ const LinearGradient gradientButton = LinearGradient(
   colors: <Color>[buttonOneColor, buttonTwoColor],
   begin: FractionalOffset.topLeft,
   end: FractionalOffset.bottomRight,
-  stops: <double>[0.0, 0.5, 1.0],
+  stops: <double>[0.0, 1.0],
   tileMode: TileMode.clamp,
 );
 

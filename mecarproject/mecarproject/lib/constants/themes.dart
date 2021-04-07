@@ -3,12 +3,12 @@ import 'colors.dart';
 
 final ThemeData appTheme = ThemeData(
   backgroundColor: backgroundOneColor,
-  canvasColor: backgroundTwoColor,
-  primaryColor: defaultTwoColor.withOpacity(0.8),
+  canvasColor: backgroundOneColor,
+  primaryColor: defaultTwoColor,
   accentColor: defaultTwoColor,
   appBarTheme: AppBarTheme(
     elevation: 0,
-    color: backgroundTwoColor,
+    color: backgroundOneColor,
     centerTitle: true,
     textTheme: TextTheme(
       headline6: textTwoStyle,
@@ -22,7 +22,7 @@ final ThemeData appTheme = ThemeData(
     buttonColor: buttonTwoColor,
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    backgroundColor: backgroundTwoColor,
+    backgroundColor: backgroundOneColor,
     selectedIconTheme: IconThemeData(color: defaultTwoColor, size: 16),
     selectedLabelStyle: textOneStyle,
     selectedItemColor: defaultTwoColor,
