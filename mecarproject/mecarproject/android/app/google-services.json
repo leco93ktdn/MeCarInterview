@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "371599923596",
+    "project_id": "mecarproject",
+    "storage_bucket": "mecarproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371599923596:android:9e4be4865e4fde1d109ea9",
+        "android_client_info": {
+          "package_name": "com.example.mecarproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371599923596-df4igvsj9puc4h5ei1sk2eg02hp1agea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA9DRovByO4m0qdkmPXZ94L-7uTlEFCB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371599923596-df4igvsj9puc4h5ei1sk2eg02hp1agea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

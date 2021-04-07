@@ -29,7 +29,7 @@ class WelcomeView extends StatelessWidget {
               child: Stack(
                 children: [
                   _buildLogo(),
-                  _buildUser(),
+                  _buildAccount(),
                 ],
               ),
             ),
@@ -41,7 +41,7 @@ class WelcomeView extends StatelessWidget {
   }
 }
 
-_buildUser() {
+_buildAccount() {
   return Positioned(
       bottom: 20,
       left: 16,
@@ -62,6 +62,7 @@ _buildUser() {
             ),
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 child: Text(
@@ -71,7 +72,7 @@ _buildUser() {
               ),
               Container(
                 child: Text(
-                  "Pawel Czerwinski",
+                  "@pawel_czerwinski",
                   style: textTwoStyle,
                 ),
               )

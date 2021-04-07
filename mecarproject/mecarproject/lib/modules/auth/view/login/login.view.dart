@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mecarproject/constants/assets.dart';
 import 'package:mecarproject/constants/colors.dart';
 import 'package:mecarproject/constants/themes.dart';
+import 'package:mecarproject/routes/app_pages.dart';
 import 'package:mecarproject/widgets/default_button.dart';
 import 'package:mecarproject/widgets/header_widget.dart';
 
@@ -46,7 +47,9 @@ class LoginView extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   backgroundColor: backgroundTwoColor,
                   textStyle: titleStyle.copyWith(color: textTwoColor),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(Routes.DASHBOARD);
+                  },
                 ),
               ],
             ),

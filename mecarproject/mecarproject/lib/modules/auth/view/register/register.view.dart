@@ -48,7 +48,8 @@ class RegisterView extends StatelessWidget {
                   backgroundColor: backgroundTwoColor,
                   textStyle: titleStyle.copyWith(color: textTwoColor),
                   onPressed: () {
-                    Get.toNamed(Routes.LOGIN);},
+                    Get.toNamed(Routes.LOGIN);
+                  },
                 ),
                 _buildPrivacy()
               ],
