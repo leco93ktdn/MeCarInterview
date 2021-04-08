@@ -11,8 +11,9 @@ import 'package:mecarproject/modules/authen/bloc/authen_bloc.dart';
 import 'package:mecarproject/modules/authen/bloc/authen_event.dart';
 import 'package:mecarproject/modules/authen/bloc/authen_state.dart';
 import 'package:mecarproject/routes/app_pages.dart';
-import 'package:mecarproject/widgets/default_button.dart';
+import 'package:mecarproject/widgets/default_button_widget.dart';
 import 'package:mecarproject/widgets/header_widget.dart';
+import 'package:mecarproject/widgets/text_form_widget.dart';
 
 class RegisterView extends StatefulWidget {
   @override
@@ -23,9 +24,9 @@ class _RegisterState extends State<RegisterView> {
   AuthenBloc _getAuthenBloc;
   AuthenState state;
   final FocusNode userFocus = FocusNode();
-  final TextEditingController userController = TextEditingController(text: "leco@gmail.com");
+  final TextEditingController emailController = TextEditingController();
   final FocusNode passFocus = FocusNode();
-  final TextEditingController passController = TextEditingController(text: "123456");
+  final TextEditingController passController = TextEditingController();
 
   @override
   void initState() {
@@ -61,16 +62,16 @@ class _RegisterState extends State<RegisterView> {
                         title: "Register",
                         paddingBottom: 32,
                       ),
-                      _buildUserTextForm(context, ""),
-                      _buildPassTextForm(context, ""),
-                      DefaultButton(
+                      TextFormWidget(textController: emailController, focusNode: userFocus),
+                      TextFormWidget(textController: passController, focusNode: passFocus, obscureText: true),
+                      DefaultButtonWidget(
                         title: "SIGN UP",
                         width: MediaQuery.of(context).size.width,
                         backgroundColor: backgroundTwoColor,
                         textStyle: titleStyle.copyWith(color: textTwoColor),
                         onPressed: () {
                           _getAuthenBloc.add(LoadingEvent());
-                          _getAuthenBloc.add(RegisterEvent(userController.text, passController.text));
+                          _getAuthenBloc.add(RegisterEvent(emailController.text, passController.text));
                         },
                       ),
                       _buildPrivacy()
@@ -81,91 +82,6 @@ class _RegisterState extends State<RegisterView> {
             }),
           ),
         ));
-  }
-
-  _buildPassTextForm(BuildContext context, String error) {
-    return TextFormField(
-      controller: passController,
-      focusNode: passFocus,
-      obscureText: true,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.all(17),
-        errorText: error,
-        hintText: 'Enter your password',
-        fillColor: Colors.white,
-        border: _borderTextForm(),
-        disabledBorder: _borderTextForm(),
-        enabledBorder: _borderTextForm(),
-        errorBorder: _borderTextForm(),
-        focusedBorder: _borderTextForm(),
-        focusedErrorBorder: _borderTextForm(),
-        errorStyle: TextStyle(
-          fontFamily: 'Mulish',
-          fontSize: 12,
-          fontWeight: FontWeight.normal,
-          fontStyle: FontStyle.normal,
-          color: Color(0xFFE51937),
-        ),
-      ),
-      style: TextStyle(
-        fontFamily: 'Roboto',
-        fontWeight: FontWeight.normal,
-        fontStyle: FontStyle.normal,
-        color: textOneColor,
-        fontSize: 20,
-      ),
-      autovalidateMode: AutovalidateMode.always,
-      keyboardType: TextInputType.text,
-      onChanged: (String value) {},
-      onFieldSubmitted: (_) {
-        userFocus.unfocus();
-      },
-    );
-  }
-
-  _buildUserTextForm(BuildContext context, String error) {
-    return TextFormField(
-      controller: userController,
-      focusNode: userFocus,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.all(17),
-        errorText: error,
-        hintText: 'Enter your username',
-        fillColor: Colors.white,
-        border: _borderTextForm(),
-        disabledBorder: _borderTextForm(),
-        enabledBorder: _borderTextForm(),
-        errorBorder: _borderTextForm(),
-        focusedBorder: _borderTextForm(),
-        focusedErrorBorder: _borderTextForm(),
-        errorStyle: TextStyle(
-          fontFamily: 'Mulish',
-          fontSize: 12,
-          fontWeight: FontWeight.normal,
-          fontStyle: FontStyle.normal,
-          color: Color(0xFFE51937),
-        ),
-      ),
-      style: TextStyle(
-        fontFamily: 'Roboto',
-        fontWeight: FontWeight.normal,
-        fontStyle: FontStyle.normal,
-        color: textOneColor,
-        fontSize: 20,
-      ),
-      autovalidateMode: AutovalidateMode.always,
-      keyboardType: TextInputType.emailAddress,
-      onChanged: (String value) {},
-      onFieldSubmitted: (_) {
-        userFocus.unfocus();
-      },
-    );
-  }
-
-  _borderTextForm() {
-    return OutlineInputBorder(
-      borderSide: BorderSide(color: borderColor, width: 2),
-    );
   }
 
   _buildPrivacy() {

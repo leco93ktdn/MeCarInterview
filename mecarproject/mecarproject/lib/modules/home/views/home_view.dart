@@ -5,12 +5,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mecarproject/constants/assets.dart';
 import 'package:mecarproject/constants/colors.dart';
 import 'package:mecarproject/constants/themes.dart';
-import 'package:mecarproject/widgets/default_button.dart';
+import 'package:mecarproject/widgets/default_button_widget.dart';
 import 'package:mecarproject/widgets/header_widget.dart';
 
 class HomeView extends StatelessWidget {
   final FocusNode userFocus = FocusNode();
-  final TextEditingController userController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final FocusNode passFocus = FocusNode();
   final TextEditingController passController = TextEditingController();
 
@@ -114,7 +114,7 @@ class HomeView extends StatelessWidget {
           textStyle: titleStyle,
         ),
         _buildAllImage(context),
-        DefaultButton(
+        DefaultButtonWidget(
             title: "SEE MORE", width: MediaQuery.of(context).size.width),
         Container(height: 80)
       ],

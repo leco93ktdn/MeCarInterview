@@ -8,7 +8,7 @@ import 'package:mecarproject/modules/authen/bloc/authen_bloc.dart';
 import 'package:mecarproject/modules/authen/bloc/authen_event.dart';
 import 'package:mecarproject/modules/authen/bloc/authen_state.dart';
 import 'package:mecarproject/modules/home/views/home_view.dart';
-import 'package:mecarproject/widgets/default_button.dart';
+import 'package:mecarproject/widgets/default_button_widget.dart';
 import '../../../constants/assets.dart';
 import '../../../constants/colors.dart';
 import '../controllers/tabbar_controller.dart';
@@ -99,7 +99,7 @@ class DashboardView extends StatelessWidget {
           color: backgroundOneColor,
           child: BlocBuilder<AuthenBloc, AuthenState>(builder: (context, state) {
             return Center(
-              child: DefaultButton(
+              child: DefaultButtonWidget(
                 title: "Log out",
                 width: MediaQuery.of(context).size.width/2,
                 onPressed: () {

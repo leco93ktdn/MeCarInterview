@@ -58,7 +58,7 @@ class TabbarController extends GetxController with WidgetsBindingObserver {
 
   Color tabColor(TabType type) {
     if (tabType == type) {
-      return defaultTwoColor;
+      return iconActiveColor;
     }
     return null;
   }

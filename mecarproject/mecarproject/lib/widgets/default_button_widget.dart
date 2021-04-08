@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mecarproject/constants/colors.dart';
 import 'package:mecarproject/constants/themes.dart';
 
-class DefaultButton extends StatelessWidget {
-  const DefaultButton({
+class DefaultButtonWidget extends StatelessWidget {
+  const DefaultButtonWidget({
     this.onPressed,
     @required this.title = '',
     this.height = 52,

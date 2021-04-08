@@ -11,6 +11,7 @@ const Color textTwoColor= Color(0xFFFFFFFF);
 const Color borderColor= Color(0xFF000000);
 
 const Color iconColor= Color(0xFF000000);
+const Color iconActiveColor= Color(0xFFBDBDBD);
 
 const Color buttonOneColor = Color(0xFFFF00D6);
 const Color buttonTwoColor = Color(0xFFFF4D00);

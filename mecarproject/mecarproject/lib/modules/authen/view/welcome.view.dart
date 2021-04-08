@@ -11,7 +11,7 @@ import 'package:mecarproject/modules/authen/bloc/authen_bloc.dart';
 import 'package:mecarproject/modules/authen/bloc/authen_event.dart';
 import 'package:mecarproject/modules/authen/bloc/authen_state.dart';
 import 'package:mecarproject/routes/app_pages.dart';
-import 'package:mecarproject/widgets/default_button.dart';
+import 'package:mecarproject/widgets/default_button_widget.dart';
 
 class WelcomeView extends StatefulWidget {
   @override
@@ -139,7 +139,7 @@ class _WelcomeState extends State<WelcomeView> {
           children: [
             Container(
               margin: EdgeInsets.only(left: 16),
-              child: DefaultButton(
+              child: DefaultButtonWidget(
                 width: MediaQuery.of(context).size.width / 2 - 22,
                 title: "LOG IN",
                 onPressed: () {
@@ -149,7 +149,7 @@ class _WelcomeState extends State<WelcomeView> {
             ),
             Container(
               margin: EdgeInsets.only(left: 16),
-              child: DefaultButton(
+              child: DefaultButtonWidget(
                 width: MediaQuery.of(context).size.width / 2 - 22,
                 title: "REGISTER",
                 backgroundColor: backgroundTwoColor,
