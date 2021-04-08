@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mecarproject/constants/themes.dart';
+import 'package:mecarproject/modules/authen/bloc/authen_bloc.dart';
+import 'package:mecarproject/modules/authen/bloc/authen_event.dart';
+import 'package:mecarproject/modules/authen/bloc/authen_state.dart';
 import 'package:mecarproject/modules/home/views/home_view.dart';
+import 'package:mecarproject/widgets/default_button.dart';
 import '../../../constants/assets.dart';
 import '../../../constants/colors.dart';
 import '../controllers/tabbar_controller.dart';
@@ -49,45 +54,61 @@ class DashboardView extends StatelessWidget {
       case TabType.comment:
         return _emptyView();
       case TabType.account:
-        return _emptyView();
+        return Account();
       default:
         return _emptyView();
     }
   }
 
   Widget _bottomAppBar() {
-    return  Container(
-          decoration: BoxDecoration(
-              border: Border(top: BorderSide(width: 1.0, color: Colors.grey))),
-          child: BottomAppBar(
-            color: backgroundOneColor,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: List<BottomBarItem>.generate(
-                  Get.find<TabbarController>().tabs.length, (int index) {
-                final FancyTabItemModel _item =
-                    Get.find<TabbarController>().tabs[index];
-                return BottomBarItem(
-                  tabItem: _item,
-                  iconColor: Get.find<TabbarController>().tabColor(_item.type),
-                );
-              }),
-            ),
-          ),
-        );
+    return Container(
+      decoration: BoxDecoration(border: Border(top: BorderSide(width: 1.0, color: Colors.grey))),
+      child: BottomAppBar(
+        color: backgroundOneColor,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: List<BottomBarItem>.generate(Get.find<TabbarController>().tabs.length, (int index) {
+            final FancyTabItemModel _item = Get.find<TabbarController>().tabs[index];
+            return BottomBarItem(
+              tabItem: _item,
+              iconColor: Get.find<TabbarController>().tabColor(_item.type),
+            );
+          }),
+        ),
+      ),
+    );
   }
 
   Widget _emptyView() {
-    return Container(
-      color: backgroundOneColor,
-      child: Center(
-        child: Text(
-          "Undeveloped functionality",
-          style: headerStyle,
-          textAlign: TextAlign.center,
-        ),
+   return Center(
+      child: Text(
+        "Undeveloped functionality",
+        style: headerStyle,
+        textAlign: TextAlign.center,
       ),
+    );
+  }
+
+  Widget Account() {
+    AuthenState state;
+    AuthenBloc _getAuthenBloc = AuthenBloc(state);
+    return BlocProvider(
+      create: (context) => _getAuthenBloc,
+      child: Container(
+          color: backgroundOneColor,
+          child: BlocBuilder<AuthenBloc, AuthenState>(builder: (context, state) {
+            return Center(
+              child: DefaultButton(
+                title: "Log out",
+                width: MediaQuery.of(context).size.width/2,
+                onPressed: () {
+                  _getAuthenBloc.add(LoadingEvent());
+                  _getAuthenBloc.add(LogoutEvent());
+                },
+              ),
+            );
+          })),
     );
   }
 }

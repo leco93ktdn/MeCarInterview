@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:mecarproject/modules/auth/view/login/login.view.dart';
-import 'package:mecarproject/modules/auth/view/register/register.view.dart';
-import 'package:mecarproject/modules/auth/view/welcome.view.dart';
+import 'package:mecarproject/modules/authen/view/login/login.view.dart';
+import 'package:mecarproject/modules/authen/view/register/register.view.dart';
+import 'package:mecarproject/modules/authen/view/welcome.view.dart';
 import 'package:mecarproject/modules/dashboard/views/dashboard.view.dart';
 
 part 'app_routes.dart';

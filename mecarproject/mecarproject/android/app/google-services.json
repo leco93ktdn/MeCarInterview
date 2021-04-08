@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "371599923596-b8d53ccqpvql2i0v5f9m7qnsrlsurnb2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mecarproject",
+            "certificate_hash": "3a650527862bc6d390b3b4077258816ac325660d"
+          }
+        },
+        {
           "client_id": "371599923596-df4igvsj9puc4h5ei1sk2eg02hp1agea.apps.googleusercontent.com",
           "client_type": 3
         }
